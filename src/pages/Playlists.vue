@@ -16,7 +16,7 @@ export default {
     }
   },
   created() {
-    const spotifyAccessToken = sessionStorage.getItem('SPOTIFY_ACCESS_TOKEN')
+    const spotifyAccessToken = localStorage.getItem('SPOTIFY_ACCESS_TOKEN')
     if (spotifyAccessToken) {
       return axios.get('https://api.spotify.com/v1/me/playlists', { headers: { Authorization: `Bearer ${spotifyAccessToken}` } } )
         .then(playlists => {
